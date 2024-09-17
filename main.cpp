@@ -34,6 +34,11 @@ int main(int argc, char *argv[])
   std::vector<unsigned char> rgba;
   read_rgba_from_png(input_filenames[0],rgba,width,height);
 
+  // Print out width and height
+  std::cout << "WIDTH " << width << "\n";
+  std::cout << "HEIGHT " << height << "\n";
+
+
   // Convert to RGB
   std::vector<unsigned char> rgb;
   rgba_to_rgb(rgba,width,height,rgb);
