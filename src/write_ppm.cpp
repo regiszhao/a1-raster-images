@@ -16,15 +16,21 @@ bool write_ppm(
     ".ppm only supports RGB or grayscale images");
 
   ////////////////////////////////////////////////////////////////////////////
-  // Replace with your code here:
 
   try {
-    // std::cout << filename << " " << width << " " << height << " " << num_channels << "\n";
+
     // create and open file
     std::ofstream ImageFile;
     ImageFile.open(filename);
+
     // header information
-    ImageFile << "P3\n" << width << " " << height << "\n255\n";
+    if (num_channels == 3) {
+        ImageFile << "P3\n";
+    }
+    else {
+        ImageFile << "P2\n";
+    }
+    ImageFile << width << " " << height << "\n255\n";
 
     // pixel information
     for (int row = 0; row < height; row++) {
@@ -40,7 +46,7 @@ bool write_ppm(
         // grayscale
         else {
           int gray_val = static_cast<int>(data[which_pixel]);
-          ImageFile << gray_val << " " << gray_val << " " << gray_val << "\n";
+          ImageFile << gray_val << "\n";
         }
       }
     }

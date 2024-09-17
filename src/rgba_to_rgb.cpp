@@ -17,8 +17,9 @@ void rgba_to_rgb(
     for (int col = 0; col < width; col++) {
 
       int which_pixel = row * width + col;
+
+      // get alpha
       double alpha = rgba[which_pixel * 4 + 3] / 255.0;
-      
 
       // loop through subpixels
       for (int subpixel = 0; subpixel < 3; subpixel++) {
@@ -29,6 +30,5 @@ void rgba_to_rgb(
       }
     }
   }
-  std::cout << "num_elements " << rgb.size() << "\n";
 
 }

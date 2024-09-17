@@ -30,7 +30,6 @@ void over(
 		  }
 
 		  // assign alpha_c
-		  //C[which_pixel * 4 + 3] = 255;
 		  C[which_pixel * 4 + 3] = static_cast<int>(alpha_c * 255);
 
 	  }

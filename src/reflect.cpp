@@ -11,7 +11,6 @@ void reflect(
   reflected.resize(width*height*num_channels);
   ////////////////////////////////////////////////////////////////////////////
   // loop through pixels of image
-  //int half_width = static_cast<int>(ceil(width / 2.0));
   for (int row = 0; row < height; row++) {
 	for (int col = 0; col < width; col++) {
 
